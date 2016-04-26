@@ -1,0 +1,9 @@
+pim_connector:
+
+    import:
+        partialImportNonExistentAttributes:
+            label: Allow partial import
+            help: Allow partial import for skip not existing attributes and attributes without edit permissions
+        importWithoutCategory:
+            label: Allow import products not associated with any categories
+            help: Allow import products not associated with any categories

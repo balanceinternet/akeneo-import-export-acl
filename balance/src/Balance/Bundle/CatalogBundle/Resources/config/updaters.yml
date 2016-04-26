@@ -1,0 +1,16 @@
+parameters:
+    pim_catalog.updater.setter.category_field.class:          Balance\Component\Catalog\Updater\Setter\CategoryFieldSetter
+
+services:
+    # Updaters
+
+    pim_catalog.updater.setter.category_field:
+        class: %pim_catalog.updater.setter.category_field.class%
+        arguments:
+            - '@pim_catalog.repository.cached_category'
+            - ['categories']
+            - '@doctrine.orm.default_entity_manager'
+            - '@pim_user.provider.user'
+            - '@session'
+        tags:
+            - { name: 'pim_catalog.updater.setter' }

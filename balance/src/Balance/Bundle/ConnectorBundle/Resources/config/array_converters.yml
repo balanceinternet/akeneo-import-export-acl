@@ -1,0 +1,15 @@
+parameters:
+    pim_connector.array_converter.flat.product.class:                                 Balance\Component\Connector\ArrayConverter\Flat\ProductStandardConverter
+    pim_connector.array_converter.flat.product.attribute_columns_resolver.class:      Balance\Component\Connector\ArrayConverter\Flat\Product\AttributeColumnsResolver
+
+services:
+    # columns resolvers
+    pim_connector.array_converter.flat.product.attribute_columns_resolver:
+        class: %pim_connector.array_converter.flat.product.attribute_columns_resolver.class%
+        arguments:
+            - '@pim_catalog.repository.attribute'
+            - '@pim_catalog.repository.currency'
+            - '@pim_catalog.resolver.attribute_values'
+            - '@doctrine.orm.default_entity_manager'
+            - '@pim_user.provider.user'
+            - '@session'

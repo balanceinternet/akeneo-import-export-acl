@@ -1,0 +1,2 @@
+parameters:
+    pimee_security.repository.locale_access.class:          Balance\Bundle\SecurityBundle\Entity\Repository\LocaleAccessRepository
